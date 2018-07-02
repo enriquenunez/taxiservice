@@ -1,0 +1,54 @@
+﻿@{ Layout = "~/Views/Shared/_LayoutMain.cshtml"; }
+@model List<taxiservice.Models.Cliente>
+
+<div class="content-wrapper">
+	<div class="container-fluid">
+		<div class="card mb-3">
+			<!-- Breadcrumbs-->
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="~/Home/Index">Inicio</a>
+				</li>
+				<li class="breadcrumb-item active">Listado de Clientes</li>
+			</ol>
+
+			<div class="card-header">
+				<h5 class="text-center"><b>Listado de Clientes</b></h5>
+			</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table table">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>TDoc</th>
+								<th>NDoc</th>
+								<th>Nombre</th>
+								<th>Correo</th>
+								<th>Telefono</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var Item in Model)
+							{
+								<tr>
+									<td> @Item.IDCliente</td>
+									<td> @Item.TDoc</td>
+									<td> @Item.NDoc</td>
+									<td> @Item.Nombre</td>
+									<td> @Item.Correo</td>
+									<td> @Item.Telefono</td>
+									<td>
+										<a title="Editar Cliente" href="#"><i class="fa fa-fw fa fa-edit"></i></a>
+										<a title="Detalles" href="/Cliente/Detalles/@Item.IDCliente"><i class="fa fa-fw fa fa-eye"></i></a>
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="card-footer small text-muted">Actualizado al 27 Mayo 2018</div>
+		</div>
+	</div>
+</div>

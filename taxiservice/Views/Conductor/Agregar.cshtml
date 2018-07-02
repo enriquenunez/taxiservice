@@ -1,0 +1,60 @@
+﻿@{ Layout = "~/Views/Shared/vistaprincipal.cshtml"; }
+@model taxiservice.Models.Conductor
+
+<div class="content-wrapper">
+	@using (Html.BeginForm("Agregar", "Cliente", FormMethod.Post))
+	{
+		<div class="container-fluid">
+			<!-- Breadcrumbs-->
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="~/Home/Index">Index</a>
+				</li>
+				<li class="breadcrumb-item">
+					<a href="~/Cliente/Listar">Lista de Conductores</a>
+				</li>
+				<li class="breadcrumb-item active">Nuevo Conductor</li>
+			</ol>
+
+			<div class="card-header">Datos de Registro</div>
+			<div class="card-body">
+				<form>
+					<div class="form-group">
+						<div class="form-row">
+							<div class="col-md-12">
+								<label for="exampleInputName">Codigo</label>
+								<input class="form-control" name="IDConductor" id="IDCliente" type="text" aria-describedby="nameHelp" readonly value="@Html.DisplayFor(model => model.IDCliente)">
+							</div>
+							<div class="col-md-12">
+								<label for="exampleInputName">TDoc</label>
+								<input class="form-control" name="TDocumento" id="TDoc" type="text" aria-describedby="nameHelp" placeholder="RUC, DNI" value="@Html.DisplayFor(model => model.TDocumento)">
+							</div>
+							<div class="col-md-12">
+								<label for="exampleInputName">NDoc</label>
+								<input class="form-control" name="NDocumento" id="ndoc" type="text" aria-describedby="nameHelp" value="@Html.DisplayFor(model => model.NDocumento)">
+							</div>
+							<div class="col-md-12">
+								<label for="exampleInputLastName">Licencia</label>
+								<input class="form-control" name="NLicencia" id="razon_social" type="text" aria-describedby="nameHelp" value="@Html.DisplayFor(model => model.RazonSocial)">
+							</div>
+							<div class="col-md-12">
+								<label for="exampleInputLastName">Nombre</label>
+								<input class="form-control" name="NombreComercial" id="nombre_comercial" type="text" aria-describedby="nameHelp" value="@Html.DisplayFor(model => model.NombreComercial)">
+							</div>
+							<div class="col-md-12">
+								<label for="exampleInputLastName">Dirección</label>
+								<input class="form-control" name="Direccion" id="drieccion_fiscal" type="text" aria-describedby="nameHelp" value="@Html.DisplayFor(model => model.DireccionFiscal)">
+							</div>
+							<div class="col-md-12">
+								<label for="exampleInputLastName">Telefono</label>
+								<input class="form-control" name="Telefono" id="telefono" type="text" aria-describedby="nameHelp" value="@Html.DisplayFor(model => model.Telefono)">
+							</div>
+						</div>
+					</div>
+					<input type="submit" class="btn btn-primary" value="Guardar">
+					<a class="btn btn-dark btn-block" href="../../Cliente/Listar">Cancelar</a>
+				</form>
+			</div>
+		</div>
+	}
+</div>

@@ -1,0 +1,45 @@
+﻿@{ Layout = "~/Views/Shared/_LayoutMain.cshtml"; }
+@model taxiservice.Models.Conductor
+
+<div class="content-wrapper">
+	<div class="container-fluid">
+		<!-- Breadcrumbs-->
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="~/Home/Index">Index</a>
+			</li>
+			<li class="breadcrumb-item">
+				<a href="~/Cliente/Listar">Listado de Conductores</a>
+			</li>
+			<li class="breadcrumb-item active">Registro de Conductor</li>
+		</ol>
+		<div class="card-header">Registro de Conductor</div>
+		<div class="card-body">
+			<form>
+				<div class="form-group">
+					<div class="form-row">
+						<div class="col-md-12">
+							<label for="exampleInputName">Codigo</label>
+						</div>
+						<div>
+							<input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Enter first name" readonly value="@Html.DisplayFor(model => model.Id)">
+						</div>
+						<div class="col-md-12">
+							<label for="exampleInputName">TDoc</label>
+							<input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Enter first name" readonly value="@Html.DisplayFor(model => model.TDocumento)">
+						</div>
+						<div class="col-md-12">
+							<label for="exampleInputName">NDoc</label>
+							<input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Enter first name" readonly value="@Html.DisplayFor(model => model.NDocumento)">
+						</div>
+						<div class="col-md-12">
+							<label for="exampleInputLastName">Nombre</label>
+							<input class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="Enter last name" readonly value="@Html.DisplayFor(model => model.Nombre)">
+						</div>
+					</div>
+				</div>
+				<a class="btn btn-dark btn-block" href="../../Conductor/Listar">Cancelar</a>
+			</form>
+		</div>
+	</div>
+</div>

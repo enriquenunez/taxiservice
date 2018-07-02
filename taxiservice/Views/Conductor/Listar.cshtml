@@ -1,0 +1,57 @@
+﻿@{ Layout = "~/Views/Shared/_LayoutMain.cshtml"; }
+@model List<taxiservice.Models.Conductor>
+
+<div class="content-wrapper">
+	<div class="container-fluid">
+		<div class="card mb-3">
+			<!-- Breadcrumbs-->
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="~/Home/Index">Inicio</a>
+				</li>
+				<li class="breadcrumb-item active">Listado de Conductores</li>
+			</ol>
+
+			<div class="card-header">
+				<h5 class="text-center"><b>Listado de Conductores</b></h5>
+			</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table table">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>TDoc</th>
+								<th>NDoc</th>
+								<th>Licencia</th>
+								<th>Nombre</th>
+								<th>Direccion</th>
+								<th>Telefono</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var Item in Model)
+							{
+								<tr>
+									<td> @Item.Id</td>
+									<td> @Item.TDocumento</td>
+									<td> @Item.NDocumento</td>
+									<td> @Item.NLicencia</td>
+									<td> @Item.Nombre</td>
+									<td> @Item.Direccion</td>
+									<td> @Item.Telefono</td>
+									<td>
+										<a title="Editar Conductor" href="#"><i class="fa fa-fw fa fa-edit"></i></a>
+										<a title="Listado de Conductores" href="/Conductor/VerDatos/@Item.Id"><i class="fa fa-fw fa fa-eye"></i></a>
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="card-footer small text-muted">Actualizado al 27 Mayo 2018</div>
+		</div>
+	</div>
+</div>
