@@ -31,7 +31,7 @@
 
 ## Diseño de su base de datos estructurada
 
-![a](https://image.ibb.co/gqDbnJ/bd.jpg)
+![a](https://image.ibb.co/fxuD1d/bd.jpg)
 
 ## Problemas encontrados en el desarrollo
 
